@@ -1,6 +1,7 @@
 package com.dummies.android.taskreminder;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -23,6 +24,9 @@ public class ReminderListActivity extends ListActivity {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id){
     	super.onListItemClick(l, v, position, id);
+    	Intent i = new Intent(this, ReminderEditActivity.class);
+    	i.putExtra("RowId",id);
+    	startActivity(i);
     }
     
     @Override
